@@ -109,15 +109,6 @@ server.listen(process.env.port || process.env.PORT || 3978, function() {
 server.post('/api/messages', async (req, res) => {
     // Route received a request to adapter for processing
 
-// console.log(req);
-// console.log(JSON.stringify(req));
-// console.log('-------------------');
-// console.log(JSON.stringify(res));
-
-    if(req.body.text === '1234'){
-        console.log('sdf');
-    }
-
     await adapter.process(req, res, (context) => bot.run(context));
 });
 
